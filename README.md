@@ -1,9 +1,10 @@
 # Destiny
 
-Destiny is a new, mock-data generator for Dart/Flutter. It uses a PCG randomness machine
-underneath, and static methods couched in a `destiny` namespace are the API. All data is
-guaranteed to be pseudo-random; across a million trials, no significant patterns were
-detected. 
+Destiny is a new, mock-data generator for Dart/Flutter. It uses static methods couched in a `destiny` namespace as the API.
+
+It also exposes an alternative to the dart:math randomness machine, using the PCG algorithm. You can access this by
+importing the file "package:destiny/pcg.dart". Support for this algorithm is provided as "best-effort": it does not have
+noticeable statistical flaws, but the algorithm was specified for languages that support unsigned integers (Dart does not).
 
 This package takes inspiration from Chance.js and Faker for Python; it aims to be the most
 complete and versatile generator of mock data.
@@ -13,7 +14,10 @@ complete and versatile generator of mock data.
 Simple usage is illustrated here. For more, see the API Reference:
 
 ```dart
-import 'package:destiny/destiny.dart';
+import 'package:destiny/destiny.dart'; // import destiny methods
+import 'package:destiny/pcg.dart'; // import pcg
+
+destiny.random = PCGRandom(); // defaults if unset to dart:math's Random(). You can also use Random.secure() here.
 
 void main() {
   print('Random Integer from 4 to 8: ${destiny.integer(min: 4, max: 8)}');

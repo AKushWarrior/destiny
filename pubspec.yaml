@@ -1,15 +1,16 @@
 name: destiny
 description: An package which generates mock-data using the PCG algorithm.
-version: 0.1.1
+version: 1.0.0
 # homepage: https://www.example.com
 
 environment:
-  sdk: '>=2.7.0 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  english_words: ^3.1.5
+  english_words: ^4.0.0
 
 dev_dependencies:
   pedantic: ^1.8.0
   test: ^1.6.0
-  instant: any
+  benchmark_harness: any
+

@@ -2,7 +2,7 @@ import 'package:english_words/english_words.dart' as words;
 import 'dart:convert' as convert;
 
 // DateTime:
-final DateTime epoch = DateTime.fromMillisecondsSinceEpoch(0);
+final DateTime epoch = DateTime.fromMicrosecondsSinceEpoch(0);
 
 DateTime get now => DateTime.now();
 //
